@@ -12,6 +12,7 @@ app.get('/api/phones', (request, response) => {
             color: 'Oro',
             price: '529',
             image: './client/src/images/iphone_7_oro.jpg',
+            urlImage: 'https://static.fnac-static.com/multimedia/Images/ES/MC/2e/74/55/5600302/1507-1/tsp20170327121118/Telefono-Movil-Apple-Iphone-7-4g-32gb-oro-Smartphone.jpg#0f36ba74-5bcd-4ef4-a422-d6aca062dc24',
             SO: 'IOS 10'
             
         },
@@ -22,6 +23,7 @@ app.get('/api/phones', (request, response) => {
             color: 'Plata',
             price: '369',
             image: './client/src/images/Samsung_Galaxy_s7_Edge_plata.jpg',
+            urlImage: 'https://static.fnac-static.com/multimedia/Images/ES/NR/1c/b0/12/1224732/1505-1.jpg',
             SO: 'Google Android'
         },
         {
@@ -31,6 +33,7 @@ app.get('/api/phones', (request, response) => {
             color: 'Oro',
             price: '195',
             image: './client/src/images/Huawei_P_Smart_32gb.jpg',
+            urlImage: 'https://static.fnac-static.com/multimedia/Images/ES/NR/27/ec/15/1436711/1505-1.jpg',
             SO: 'Android 8.0 Oreo EMUI 8.0'
         },
         {
@@ -40,6 +43,7 @@ app.get('/api/phones', (request, response) => {
             color: 'Gris espacial',
             price: '689',
             image: './client/src/images/iPhone_8_64GB_Gris.jpg',
+            urlImage: 'https://static.fnac-static.com/multimedia/Images/ES/NR/43/45/15/1393987/1505-1.jpg',
             SO: 'Android 8.0 Oreo EMUI 8.0'
         },
         {
@@ -49,6 +53,7 @@ app.get('/api/phones', (request, response) => {
             color: 'Negro',
             price: '455',
             image: './client/src/images/Samsung_Galaxy_S8.jpg',
+            urlImage: 'https://static.fnac-static.com/multimedia/Images/ES/NR/18/6d/14/1338648/1505-1.jpg',
             SO: 'Android 7.0 Nougat'
         },
         {
@@ -58,13 +63,12 @@ app.get('/api/phones', (request, response) => {
             color: 'Azul',
             price: '410',
             image: './client/src/images/Honor_10.jpg',
+            urlImage: 'https://static.fnac-static.com/multimedia/Images/ES/NR/0c/42/19/1655308/1505-1.jpg',
             SO: 'Android 8.1 Oreo con HUAWEI Emotion UI 8.1'
         }
     ];
     response.setHeader('Content-Type', 'application/json');
     response.send(JSON.stringify(phones));
-
-    // res.send({ express: 'Trayendo datos desde express' });
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
