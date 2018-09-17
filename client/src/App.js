@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from "react-redux";
 import { getPhones } from "./store/clientFetchReducer";
+import  PhoneListContainer  from "./components/PhoneListContainer";
 
 class App extends Component {
 
@@ -13,7 +14,7 @@ class App extends Component {
     console.log(this)
     return (
       <div className="App">
-
+        <PhoneListContainer />
       </div>
     );
   }
@@ -29,7 +30,4 @@ const mapDispatchToProps = {
   getPhones
 }
 
-const connection = connect(mapStateToProps, mapDispatchToProps);
-const AppConnected = connection(App)
-
-export default AppConnected;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
