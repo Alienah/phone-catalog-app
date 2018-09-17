@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { connect } from "react-redux";
-import { getPhones } from "./store/clientFetchReducer";
 import  PhoneListContainer  from "./containers/PhoneListContainer";
 
 class App extends Component {
-
-  componentDidMount() {
-    this.props.getPhones()
-  }
-
   render() {
     console.log(this)
     return (
@@ -20,14 +13,4 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    isloading: state.clientFetch.loading,
-    phones: state.clientFetch.phones
-  }
-}
-const mapDispatchToProps = {
-  getPhones
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
