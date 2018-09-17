@@ -2,9 +2,10 @@ import React from "react";
 
 class PhoneDetailComponent extends React.Component {
     render() {
+        console.log(this.props.phone[0])
         return(
             <div>
-            <p>{this.props.title}</p>
+                <p>{this.props.phone[0].title}</p>
             </div>
         )
     }

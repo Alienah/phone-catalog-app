@@ -1,17 +1,51 @@
 import React, { Component } from 'react';
 import './App.css';
-import  PhoneListContainer  from "./containers/PhoneListContainer";
-import PhoneDetailComponent from "../components/PhoneDetailComponent";
+import Logo from './images/mm-logo-main.png';
+import { Route, Switch } from 'react-router-dom';
+import PhoneListContainer from "./containers/PhoneListContainer";
+import PhoneDetailComponent from "./components/PhoneDetailComponent";
+import { connect } from "react-redux";
+import { getPhones } from "./store/clientFetchReducer";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getPhones()
+  }
+
   render() {
     console.log(this)
     return (
-      <div className="App">
-        <PhoneListContainer />
+      <div className="app">
+        <header className="app__header">
+          <img className="logo" src={Logo} alt="logo" />
+        </header>
+        <main className="app__main">
+          <Switch>
+            <Route exact path='/' render={() =>
+              <PhoneListContainer />
+            } />
+            <Route path='/details/:id' render={(props) =>
+              <PhoneDetailComponent
+                phone={this.props.phones.filter(phone => phone.id == props.match.params.id)}
+              />
+            } />
+          </Switch>
+        </main>
+        <footer className="app__footer">
+        </footer>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    phones: state.clientFetch.phones
+  }
+}
+const mapDispatchToProps = {
+  getPhones
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+

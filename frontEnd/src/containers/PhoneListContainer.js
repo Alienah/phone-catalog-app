@@ -40,7 +40,6 @@ class PhoneListContainer extends React.Component {
         )
     }
 
-
     render() {
         console.log(this.props.phones)
         return (
