@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getPhones } from "../store/clientFetchReducer";
-import  PhoneDetailComponent  from "../components/PhoneDetailComponent";
+import { Link } from "react-router-dom";
 
 class PhoneListContainer extends React.Component {
-    
+
     componentDidMount() {
         this.props.getPhones()
     }
@@ -14,16 +14,30 @@ class PhoneListContainer extends React.Component {
             <ul className="App-list">{
                 phones.map(
                     (phone, i) => 
-                        <li key={`${phone.name}${i}`}>
-                            <PhoneDetailComponent
-                                title={phone.title}
-                                link={phone.image}
-                                description={phone.description}
-                                color={phone.color}
-                                SO={phone.SO}
-                            />
-                        </li>)}
+                        this.renderPhoneItem(phone, i)
+                        )
+                    }
             </ul>);
+    }
+
+    renderPhoneItem(phone, i) {
+        return(
+            <li key={`${phone.name}${i}`}>
+                <div className="phone__container">
+                    <div className="phone__image--container">
+                        <Link className="item-link" to={`/details/${phone.id}`}>
+                            <img className="phone__image" src={phone.urlImage} alt={phone.title} />
+                        </Link>
+                    </div>
+                    <div className="phone__data">
+                        <h2 className="phone__title">
+                            <span className="phone__name">{phone.title}</span> 
+                        </h2>
+                        <p className="phone__price">{phone.price} €</p>
+                    </div>
+                </div>
+            </li>
+        )
     }
 
 
