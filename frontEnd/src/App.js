@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from "react-redux";
 import { getPhones } from "./store/clientFetchReducer";
-import  PhoneListContainer  from "./components/PhoneListContainer";
+import  PhoneListContainer  from "./containers/PhoneListContainer";
 
 class App extends Component {
 
