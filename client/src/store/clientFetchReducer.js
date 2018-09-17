@@ -1,3 +1,5 @@
+import axios  from "axios";
+
 const initialState = {
     loading: false,
     phones: []
@@ -31,7 +33,7 @@ export function clientFetchReducer(state = initialState, action) {
 export function getPhones() {
     return {
         type: ACTION_TYPES.GET_PHONES,
-        payload: fetch('/api/phones')
-            .then((response) => response.json())
+        payload: axios.get('/api/phones')
+            .then((response) => response.data)
     }
 }
