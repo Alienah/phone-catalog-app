@@ -1,5 +1,6 @@
 import React from "react";
 import "./PhoneListContainer.css";
+import Spinner from "../components/Spinner"
 import { connect } from "react-redux";
 import { getPhones } from "../store/clientFetchReducer";
 import { Link } from "react-router-dom";
@@ -42,12 +43,11 @@ class PhoneListContainer extends React.Component {
     }
 
     render() {
-        console.log(this.props.phones)
-        return (
-            <div className="phone__list-container">
-                {this.renderPhones(this.props.phones)}
-            </div>
-        )
+        if(this.props.phones == undefined){
+            return (<Spinner />)
+        } else {
+            return (<div className="phone__list-container">{this.renderPhones(this.props.phones)}</div>)
+        }
     }
 }
 
