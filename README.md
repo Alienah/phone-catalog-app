@@ -4,7 +4,7 @@ Small Web App developed with React, Redux, Express and Nodejs
 ## Para empezar.
 
 - Clona este repositorio
-- Al entrar verás que hay dos carpetas frontEnd y backEnd.
+- Al entrar verás que hay dos carpetas: *frontEnd* y *backEnd*.
 - Abre dos terminales, una para cada una.
 - `npm install` en las dos, para instalar las dependencias
 
