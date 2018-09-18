@@ -3,28 +3,24 @@
 }
 
 .app__header {
-  position: relative;
   background-color: #222;
-  height: 80px;
+  height: 50px;
   padding: 20px;
-  color: white;
+  border-bottom: 3px solid #ffdf00;
+}
+.nav__container{
+  position: relative;
+  background-color: #eee;
+  height: 30px;
 }
 
 .header__item-link{
-  color: white;
   text-decoration: none;
   position: absolute;
   left: 15px;
   bottom: 5px;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
 
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

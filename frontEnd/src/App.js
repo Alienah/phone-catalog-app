@@ -16,9 +16,13 @@ class App extends Component {
     console.log(this)
     return (
       <div className="app">
-        <header className="app__header">
-          <img className="logo" src={Logo} alt="logo" />
-          <Link className="header__item-link" to='/'>Inicio</Link>
+        <header>
+          <div className="app__header">
+            <img className="logo" src={Logo} alt="logo" />
+          </div>
+          <div className="nav__container">
+            <Link className="header__item-link" to='/'>Inicio</Link>
+          </div>
         </header>
         <main className="app__main">
           <Switch>
@@ -32,8 +36,6 @@ class App extends Component {
             } />
           </Switch>
         </main>
-        <footer className="app__footer">
-        </footer>
       </div>
     );
   }
