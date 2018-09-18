@@ -43,7 +43,7 @@ class PhoneListContainer extends React.Component {
     }
 
     render() {
-        if(this.props.phones == undefined){
+        if (this.props.isloading) {
             return (<Spinner />)
         } else {
             return (<div className="phone__list-container">{this.renderPhones(this.props.phones)}</div>)

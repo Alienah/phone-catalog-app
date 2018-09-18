@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { logger } from "redux-logger";
-import { allReducers } from "./store/allReducers";
+import { allReducers } from "./store/reducersIndex";
 
 const promiseMiddleware = store => next => action => {
     if (action.payload instanceof Promise) {
@@ -10,10 +10,12 @@ const promiseMiddleware = store => next => action => {
             })
         })
         action.payload.then(result => {
-            store.dispatch({
-                type: action.type + '_FULFILLED',
-                payload: result
-            })
+            if (result != undefined) {
+                store.dispatch({
+                    type: action.type + '_FULFILLED',
+                    payload: result
+                })
+            }
         })
         action.payload.catch(err => {
             store.dispatch({
@@ -27,7 +29,6 @@ const promiseMiddleware = store => next => action => {
 }
 
 const middleware = [
-    logger,
     promiseMiddleware
 ];
 

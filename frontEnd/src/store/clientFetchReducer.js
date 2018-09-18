@@ -1,4 +1,4 @@
-import axios  from "axios";
+import axios from "axios";
 
 const initialState = {
     loading: false,
@@ -30,7 +30,6 @@ export function clientFetchReducer(state = initialState, action) {
             return {
                 ...state,
                 loading: true,
-             
             }
 
         default:
@@ -42,7 +41,7 @@ export function getPhones() {
     return {
         type: ACTION_TYPES.GET_PHONES,
         payload: axios.get('/api/phones')
-        
+
             .then((response) => response.data)
             .catch(error => console.log('Error', error))
     }
