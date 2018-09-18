@@ -6,7 +6,8 @@
     padding: 0; 
     display: grid;
     grid-template-columns: 1fr;
-    grid-row-gap: 20px; }
+    grid-row-gap: 20px; 
+}
 
 .phone__item-list{
     border: 2px solid #ffdf00;
@@ -33,18 +34,19 @@
 
 @media all and (min-width: 768px) {
     .phone__list {
-      grid-template-columns: 1fr 1fr; 
+        grid-column-gap: 15px;
+        grid-template-columns: 1fr 1fr; 
     } 
 }
 @media all and (min-width: 900px) {
     .phone__list {
-      grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-columns: 1fr 1fr 1fr; 
     } 
 }
 @media all and (min-width: 1024px) {
     .phone__list {
-      grid-column-gap: 30px;
-      grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-column-gap: 30px;
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
     } 
 }
 
