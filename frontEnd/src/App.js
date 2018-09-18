@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Logo from './images/mm-logo-main.png';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import PhoneListContainer from "./containers/PhoneListContainer";
 import PhoneDetailComponent from "./components/PhoneDetailComponent";
 import { connect } from "react-redux";
@@ -18,6 +18,7 @@ class App extends Component {
       <div className="app">
         <header className="app__header">
           <img className="logo" src={Logo} alt="logo" />
+          <Link className="header__item-link" to='/'>Inicio</Link>
         </header>
         <main className="app__main">
           <Switch>

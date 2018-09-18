@@ -3,10 +3,19 @@
 }
 
 .app__header {
+  position: relative;
   background-color: #222;
   height: 80px;
   padding: 20px;
   color: white;
+}
+
+.header__item-link{
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  left: 15px;
+  bottom: 5px;
 }
 
 .App-title {
